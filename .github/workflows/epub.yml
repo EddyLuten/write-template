@@ -1,0 +1,28 @@
+name: Pandoc EPUB Generation
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: create file list
+        id: files_list
+        run: |
+          mkdir -p output
+          echo "::set-output name=files::$(printf '"%s" ' chapters/*.md)"
+      - uses: docker://pandoc/core:latest
+        with:
+          args: >-
+          --from=markdown+smart
+          --to=epub
+          --css=build/epub/epub.css
+          --output=output/ebook.epub
+          --toc
+          ${{ steps.files_list.outputs.files }}
+          chapters/metadata.yml
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output

@@ -1,0 +1,45 @@
+{
+    "extensions": {
+        "recommendations": [
+            "znck.grammarly",
+            "DavidAnson.vscode-markdownlint",
+            "ms-vscode.wordcount",
+            "EditorConfig.EditorConfig"
+        ]
+    },
+    "settings": {
+        // Base editor config
+        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "wordWrapColumn",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "files.trimFinalNewlines": true,
+        // Zen Mode config
+        "zenMode.centerLayout": true,
+        "zenMode.fullScreen": true,
+        "zenMode.restore": true,
+        "zenMode.hideActivityBar": true,
+        // Markdown and preview config
+        "markdown.preview.fontSize": 22,
+        // "markdown.preview.fontFamily": "'Source Serif Pro', Serif",
+        "[markdown]": {
+            "editor.glyphMargin": false,
+            "editor.letterSpacing": 0.25,
+            "editor.fontSize": 22,
+            // "editor.fontFamily": "'Latin Modern Mono Light'",
+            "editor.fontWeight": "400",
+            "editor.wordWrap": "bounded",
+            "editor.lineNumbers": "interval",
+            "editor.quickSuggestions": {
+                "other": false,
+                "comments": false,
+                "strings": false
+            }
+        }
+    },
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
+}
