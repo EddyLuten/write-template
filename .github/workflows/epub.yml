@@ -15,13 +15,13 @@ jobs:
       - uses: docker://pandoc/core:latest
         with:
           args: >-
-          --from=markdown+smart
-          --to=epub
-          --css=build/epub/epub.css
-          --output=output/ebook.epub
-          --toc
-          ${{ steps.files_list.outputs.files }}
-          chapters/metadata.yml
+            --from=markdown+smart
+            --to=epub
+            --css=build/epub/epub.css
+            --output=output/ebook.epub
+            --toc
+            ${{ steps.files_list.outputs.files }}
+            chapters/metadata.yml
       - uses: actions/upload-artifact@master
         with:
           name: output
